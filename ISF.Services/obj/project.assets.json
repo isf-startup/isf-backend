@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "ISF.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/ISF.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ISF.Core.dll": {}
+        }
+      },
+      "ISF.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ISF.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ISF.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ISF.Data.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ISF.Core/1.0.0": {
+      "type": "project",
+      "path": "../ISF.Core/ISF.Core.csproj",
+      "msbuildProject": "../ISF.Core/ISF.Core.csproj"
+    },
+    "ISF.Data/1.0.0": {
+      "type": "project",
+      "path": "../ISF.Data/ISF.Data.csproj",
+      "msbuildProject": "../ISF.Data/ISF.Data.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "ISF.Core >= 1.0.0",
+      "ISF.Data >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\user\\.nuget\\packages\\": {},
@@ -39,7 +77,14 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\user\\isf-backend\\ISF.Core\\ISF.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\isf-backend\\ISF.Core\\ISF.Core.csproj"
+            },
+            "C:\\Users\\user\\isf-backend\\ISF.Data\\ISF.Data.csproj": {
+              "projectPath": "C:\\Users\\user\\isf-backend\\ISF.Data\\ISF.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

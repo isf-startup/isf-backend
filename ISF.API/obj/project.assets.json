@@ -33,6 +33,43 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "ISF.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/ISF.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ISF.Core.dll": {}
+        }
+      },
+      "ISF.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ISF.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ISF.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ISF.Data.dll": {}
+        }
+      },
+      "ISF.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ISF.Core": "1.0.0",
+          "ISF.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ISF.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ISF.Services.dll": {}
+        }
       }
     }
   },
@@ -67,10 +104,27 @@
         "microsoft.openapi.1.6.17.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
+    },
+    "ISF.Core/1.0.0": {
+      "type": "project",
+      "path": "../ISF.Core/ISF.Core.csproj",
+      "msbuildProject": "../ISF.Core/ISF.Core.csproj"
+    },
+    "ISF.Data/1.0.0": {
+      "type": "project",
+      "path": "../ISF.Data/ISF.Data.csproj",
+      "msbuildProject": "../ISF.Data/ISF.Data.csproj"
+    },
+    "ISF.Services/1.0.0": {
+      "type": "project",
+      "path": "../ISF.Services/ISF.Services.csproj",
+      "msbuildProject": "../ISF.Services/ISF.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "ISF.Core >= 1.0.0",
+      "ISF.Services >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.2"
     ]
   },
@@ -106,7 +160,14 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\user\\isf-backend\\ISF.Core\\ISF.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\isf-backend\\ISF.Core\\ISF.Core.csproj"
+            },
+            "C:\\Users\\user\\isf-backend\\ISF.Services\\ISF.Services.csproj": {
+              "projectPath": "C:\\Users\\user\\isf-backend\\ISF.Services\\ISF.Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
