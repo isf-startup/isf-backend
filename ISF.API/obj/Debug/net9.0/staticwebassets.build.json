@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "BYSYneQ4VRQdNmtUerPvrgBVu43IaB2hyXO8pzlmBPI=",
+  "Source": "ISF.API",
+  "BasePath": "_content/ISF.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

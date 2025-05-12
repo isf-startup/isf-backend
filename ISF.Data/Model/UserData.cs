@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISF.Data.Model
 {
+    //dotnet ef migrations add initialcreate --project .\ISF.Data\ --startup-project .\ISF.API\
     public class UserData
     {
         [Key]

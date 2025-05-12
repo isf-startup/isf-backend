@@ -1,8 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using ISF.Data.Model; 
+
+
 internal class Program
 {
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        builder.Services.AddDbContext<ISFDbContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        
 
         builder.Services.AddOpenApi();
         builder.Services.AddControllers();

@@ -1,0 +1,13 @@
+C:\Users\irem1\isf-backend\ISF.Core\bin\Debug\net9.0\ISF.Core.deps.json
+C:\Users\irem1\isf-backend\ISF.Core\bin\Debug\net9.0\ISF.Core.dll
+C:\Users\irem1\isf-backend\ISF.Core\bin\Debug\net9.0\ISF.Core.pdb
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.AssemblyInfoInputs.cache
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.AssemblyInfo.cs
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.csproj.CoreCompileInputs.cache
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.sourcelink.json
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.dll
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\refint\ISF.Core.dll
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.pdb
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ref\ISF.Core.dll
+C:\Users\irem1\isf-backend\ISF.Core\obj\Debug\net9.0\ISF.Core.csproj.AssemblyReference.cache
