@@ -1,0 +1,39 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Secrets & configs
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Dependency caches
+packages/
+node_modules/
+
+# Docker
+*.pid
+
+# Python if applicable (if you’re mixing Python too)
+__pycache__/
+*.py[cod]
+
+# Rider
+.idea/
