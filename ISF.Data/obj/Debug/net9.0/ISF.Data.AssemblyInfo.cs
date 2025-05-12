@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ISF.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3bb592623b17bf19c4ce935eb82b846011680df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f99d26560eb5eab468d0cdb8e166ed2292dd334")]
 [assembly: System.Reflection.AssemblyProductAttribute("ISF.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ISF.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
