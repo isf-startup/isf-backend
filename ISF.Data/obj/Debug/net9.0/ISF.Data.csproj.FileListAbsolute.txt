@@ -1,0 +1,16 @@
+C:\Users\irem1\isf-backend\ISF.Data\bin\Debug\net9.0\ISF.Data.deps.json
+C:\Users\irem1\isf-backend\ISF.Data\bin\Debug\net9.0\ISF.Data.dll
+C:\Users\irem1\isf-backend\ISF.Data\bin\Debug\net9.0\ISF.Data.pdb
+C:\Users\irem1\isf-backend\ISF.Data\bin\Debug\net9.0\ISF.Core.dll
+C:\Users\irem1\isf-backend\ISF.Data\bin\Debug\net9.0\ISF.Core.pdb
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.csproj.AssemblyReference.cache
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.AssemblyInfoInputs.cache
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.AssemblyInfo.cs
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.csproj.CoreCompileInputs.cache
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.sourcelink.json
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.csproj.Up2Date
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.dll
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\refint\ISF.Data.dll
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ISF.Data.pdb
+C:\Users\irem1\isf-backend\ISF.Data\obj\Debug\net9.0\ref\ISF.Data.dll
