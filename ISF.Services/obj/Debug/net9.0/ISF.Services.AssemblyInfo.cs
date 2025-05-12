@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ISF.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2173544537cbec3bd12e313682cf55f71c63c5f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd7beaae285c63d39ec02c4f5c670ddfecae517b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ISF.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ISF.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
