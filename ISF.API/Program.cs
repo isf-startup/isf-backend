@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using ISF.Data.Model; 
+using ISF.Data.Model;
+using ISF.Core;
+using ISF.Services;
 
 
 internal class Program
@@ -16,6 +18,7 @@ internal class Program
         builder.Services.AddOpenApi();
         builder.Services.AddControllers();
         builder.Services.AddHttpContextAccessor();
+        builder.Services.AddScoped<ISentencesRepository, SentenceRepository>();
 
         var app = builder.Build();
 
