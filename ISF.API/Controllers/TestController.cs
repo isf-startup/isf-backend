@@ -2,25 +2,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ISF.Core;
 using ISF.Data.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ISF.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AppendTestController : ControllerBase
+    public class TestController : ControllerBase
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<TestController> _logger;
         private readonly ISFDbContext _dbContext;
-        public AppendTestController(ILogger logger, ISFDbContext dbContext)
+        private readonly ITokenService _tokenService;
+        public TestController(ILogger<TestController> logger, ISFDbContext dbContext, ITokenService tokenService)
         {
             _dbContext = dbContext;
             _logger = logger;
+            _tokenService = tokenService;
         }
+        [HttpPost("login")]
+        public async Task<IActionResult> LoginTest([FromBody]UserData data)     
+        {
+            var token = await _tokenService.GenerateToken(data);
+            return Ok(token);
+        }
+
+        [Authorize]
         [HttpPost("append")]
         public async Task<IActionResult> Append()
         {
+
                 List<string> sentencesTR = new List<string>
                     {
                     "Bugün harika bir gün olacak.",
