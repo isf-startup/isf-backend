@@ -17,6 +17,7 @@ namespace ISF.Data.Model
         public string? DisplayName { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool IsPremium { get; set; } // Indicates if the user is a premium user
-
+        public ICollection<FavoriteSentence> FavoriteSentences { get; set; } = new HashSet<FavoriteSentence>();
+        public ICollection<FavoriteSound> FavoriteSounds { get; set; } = new HashSet<FavoriteSound>();
     }
 }

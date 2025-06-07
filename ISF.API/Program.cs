@@ -35,7 +35,11 @@ internal class Program
         builder.Services.AddControllers();
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddScoped<ISentencesRepository, SentenceRepository>();
+        builder.Services.AddScoped<ISoundRepository, SoundRepository>();
+        builder.Services.AddScoped<IPlatformTokenQueryService, PlatformTokenQueryService>();
         builder.Services.AddScoped<ITokenService, TokenService>();
+        
+            
         builder.Services.AddLogging(loggingBuilder =>
         {
             loggingBuilder.AddConsole();

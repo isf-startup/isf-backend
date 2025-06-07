@@ -33,7 +33,52 @@ namespace ISF.Services
             {
                 throw new ArgumentException("Invalid language code.", nameof(languageCode));
             }
-
+        }
+        public Task<List<FavoriteSentence>> GetFavoriteSentencesAsync(string userId)
+        {
+            return _context.FavoriteSentences.Where(s => s.UserId == userId).ToListAsync();
+        }
+        public async Task<bool> AddFavoriteSentenceAsync(string userId, string sentence)
+        {
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(sentence))
+            {
+                throw new ArgumentException("User ID and sentence cannot be null or empty.", nameof(userId));
+            }
+            var isSentenceExists = await _context.FavoriteSentences.AnyAsync(s => s.Sentence == sentence && s.UserId == userId);
+            if (isSentenceExists)
+            {
+                return false;
+            }
+            var favoriteSentence = new FavoriteSentence
+            {
+                UserId = userId,
+                Sentence = sentence
+            };
+            _context.FavoriteSentences.Add(favoriteSentence);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        public async Task<bool> RemoveFavoriteSentenceAsync(string userId, string sentence)
+        {
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(sentence))
+            {
+                throw new ArgumentException("User ID and sentence cannot be null or empty.", nameof(userId));
+            }
+            var favoriteSentence = await _context.FavoriteSentences.FirstOrDefaultAsync(s => s.Sentence == sentence && s.UserId == userId);
+            if (favoriteSentence == null)
+            {
+                return false;
+            }
+            var response = _context.FavoriteSentences.Remove(favoriteSentence);
+            if (response.State == EntityState.Deleted)
+            {
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
