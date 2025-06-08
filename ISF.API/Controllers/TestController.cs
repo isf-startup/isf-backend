@@ -77,7 +77,7 @@ namespace ISF.API.Controllers
         public async Task<IActionResult> TestApi()
         {
             var sentences = await _dbContext.Sentences.ToListAsync();
-            return Ok($"Test Affirmation Words: {sentences}");
+            return Ok(sentences);
         }
     }
 
