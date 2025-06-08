@@ -21,7 +21,7 @@ namespace ISF.Services
             {
                 throw new ArgumentException("Language code cannot be null or empty.", nameof(languageCode));
             }
-             if (languageCode == "en")
+             if (languageCode == "tr")
             {
                     var result = await _context.Sentences.Where(s => s.WordEN != "en").ToListAsync();
                     return result;
@@ -29,7 +29,7 @@ namespace ISF.Services
 
             else if (languageCode == "tr")
             {
-            var result = await _context.Sentences.Where(s => s.WordTR != "tr").ToListAsync();
+            var result = await _context.Sentences.Where(s => s.WordTR != "en").ToListAsync();
             return result;
             }
 
