@@ -21,15 +21,15 @@ namespace ISF.Services
             {
                 throw new ArgumentException("Language code cannot be null or empty.", nameof(languageCode));
             }
-             if (languageCode == "tr")
+             if (languageCode == "en")
             {
-                    var result = await _context.Sentences.Where(s => s.WordEN != "en").ToListAsync();
+                    var result = await _context.Sentences.Where(s => !string.IsNullOrEmpty(s.WordEN)).ToListAsync();
                     return result;
             }             
 
             else if (languageCode == "tr")
             {
-            var result = await _context.Sentences.Where(s => s.WordTR != "en").ToListAsync();
+            var result = await _context.Sentences.Where(s => !string.IsNullOrEmpty(s.WordTR)).ToListAsync();
             return result;
             }
 
