@@ -8,6 +8,6 @@ namespace ISF.Data.Model.DTO
     public class FavoriteRequestDTO
     {
         public int SentenceId { get; set; }
-        public string UserId { get; set; } = string.Empty;
+        public int UserId { get; set; }
     }
 }

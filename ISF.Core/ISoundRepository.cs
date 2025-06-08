@@ -9,8 +9,8 @@ namespace ISF.Core
     public interface ISoundRepository
     {
         Task<List<SoundModel>> GetSoundModelsAsync();
-        Task<List<FavoriteSound>> GetFavoriteSoundsAsync(string userId);
-        Task<bool> AddFavoriteSoundAsync(string userId, string soundUrl);
-        Task<bool> RemoveFavoriteSoundAsync(string userId, string soundUrl);
+        Task<List<FavoriteSound>> GetFavoriteSoundsAsync(int userId);
+        Task<bool> AddFavoriteSoundAsync(int userId, string soundUrl);
+        Task<bool> RemoveFavoriteSoundAsync(int userId, string soundUrl);
     }
 }

@@ -34,13 +34,13 @@ namespace ISF.Services
                 throw new ArgumentException("Invalid language code.", nameof(languageCode));
             }
         }
-        public Task<List<FavoriteSentence>> GetFavoriteSentencesAsync(string userId)
+        public Task<List<FavoriteSentence>> GetFavoriteSentencesAsync(int userId)
         {
             return _context.FavoriteSentences.Where(s => s.UserId == userId).ToListAsync();
         }
-        public async Task<bool> AddFavoriteSentenceAsync(string userId, string sentence)
+        public async Task<bool> AddFavoriteSentenceAsync(int userId, string sentence)
         {
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(sentence))
+            if (userId == 0 || string.IsNullOrEmpty(sentence))
             {
                 throw new ArgumentException("User ID and sentence cannot be null or empty.", nameof(userId));
             }
@@ -58,9 +58,9 @@ namespace ISF.Services
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<bool> RemoveFavoriteSentenceAsync(string userId, string sentence)
+        public async Task<bool> RemoveFavoriteSentenceAsync(int userId, string sentence)
         {
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(sentence))
+            if (userId==0 || string.IsNullOrEmpty(sentence))
             {
                 throw new ArgumentException("User ID and sentence cannot be null or empty.", nameof(userId));
             }

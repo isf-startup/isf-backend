@@ -22,6 +22,48 @@ namespace ISF.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ISF.Data.Model.FavoriteSentence", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Sentence")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FavoriteSentences");
+                });
+
+            modelBuilder.Entity("ISF.Data.Model.FavoriteSound", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("SoundUrl")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FavoriteSounds");
+                });
+
             modelBuilder.Entity("ISF.Data.Model.Sentence", b =>
                 {
                     b.Property<int>("Id")
@@ -43,7 +85,7 @@ namespace ISF.Data.Migrations
                     b.ToTable("Sentences");
                 });
 
-            modelBuilder.Entity("ISF.Data.Model.SoundData", b =>
+            modelBuilder.Entity("ISF.Data.Model.SoundModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,13 +93,12 @@ namespace ISF.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Pathway")
-                        .IsRequired()
+                    b.Property<string>("SoundUrl")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("SoundDatas");
+                    b.ToTable("SoundModels");
                 });
 
             modelBuilder.Entity("ISF.Data.Model.UserData", b =>
@@ -89,6 +130,31 @@ namespace ISF.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserDatas");
+                });
+
+            modelBuilder.Entity("ISF.Data.Model.FavoriteSentence", b =>
+                {
+                    b.HasOne("ISF.Data.Model.UserData", "User")
+                        .WithMany("FavoriteSentences")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ISF.Data.Model.FavoriteSound", b =>
+                {
+                    b.HasOne("ISF.Data.Model.UserData", "User")
+                        .WithMany("FavoriteSounds")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ISF.Data.Model.UserData", b =>
+                {
+                    b.Navigation("FavoriteSentences");
+
+                    b.Navigation("FavoriteSounds");
                 });
 #pragma warning restore 612, 618
         }

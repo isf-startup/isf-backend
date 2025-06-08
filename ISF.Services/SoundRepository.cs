@@ -25,18 +25,18 @@ namespace ISF.Services
             return response ?? new List<SoundModel>();
 
         }
-        public async Task<List<FavoriteSound>> GetFavoriteSoundsAsync(string userId)
+        public async Task<List<FavoriteSound>> GetFavoriteSoundsAsync(int userId)
         {
-            if (string.IsNullOrEmpty(userId))
+            if (userId == 0)
             {
                 throw new ArgumentException("User ID cannot be null or empty.", nameof(userId));
             }
 
             return await _context.FavoriteSounds.Where(s => s.UserId == userId).ToListAsync();
         }
-        public async Task<bool> AddFavoriteSoundAsync(string userId, string soundUrl)
+        public async Task<bool> AddFavoriteSoundAsync(int userId, string soundUrl)
         {
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(soundUrl))
+            if (userId == 0 || string.IsNullOrEmpty(soundUrl))
             {
                 throw new ArgumentException("User ID and sound URL cannot be null or empty.", nameof(userId));
             }
@@ -54,9 +54,9 @@ namespace ISF.Services
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<bool> RemoveFavoriteSoundAsync(string userId, string soundUrl)
+            public async Task<bool> RemoveFavoriteSoundAsync(int userId, string soundUrl)
         {
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(soundUrl))
+            if (userId == 0 || string.IsNullOrEmpty(soundUrl))
             {
                 throw new ArgumentException("User ID and sound URL cannot be null or empty.", nameof(userId));
             }

@@ -33,7 +33,7 @@ namespace ISF.API.Controllers
         [HttpGet("getfavoritesentences")]
         public async Task<IActionResult> GetFavoriteSentences([FromQuery] int userId)
         {
-            var result = await _sentencesRepository.GetFavoriteSentencesAsync(userId.ToString());
+            var result = await _sentencesRepository.GetFavoriteSentencesAsync(userId);
             return result == null ? NotFound("Favori cümle bulunamadı") : Ok(result);
         }
 
@@ -41,10 +41,10 @@ namespace ISF.API.Controllers
         [HttpPost("addfavoritesentence")]
         public async Task<IActionResult> AddFavoriteSentence([FromBody] FavoriteRequestDTO request)
         {
-            var userId = request.UserId.ToString();
+            var userId = request.UserId;
             var sentence = await _context.Sentences.FirstOrDefaultAsync(s => s.Id == request.SentenceId);
 
-            if (sentence == null || userId == null)
+            if (sentence == null || userId == 0)
                 return BadRequest("Cümle veya kullanıcı bulunamadı");
 
             var text = sentence.WordEN ?? sentence.WordTR;
@@ -60,7 +60,7 @@ namespace ISF.API.Controllers
         [HttpDelete("removefavoritesentence")]
         public async Task<IActionResult> RemoveFavoriteSentence([FromBody] FavoriteRequestDTO request)
         {
-            var userId = request.UserId.ToString();
+            var userId = request.UserId;
             var sentence = await _context.Sentences.FirstOrDefaultAsync(s => s.Id == request.SentenceId);
 
             if (sentence is null)
