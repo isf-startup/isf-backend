@@ -6,6 +6,7 @@ using ISF.Core;
 using ISF.Data.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ISF.API.Controllers
 {
@@ -71,5 +72,13 @@ namespace ISF.API.Controllers
             var result = new { Message = "Append operation completed successfully." };
             return Ok(result);
         }
+        
+        [HttpGet("test")]
+        public async Task<IActionResult> TestApi()
+        {
+            var sentences = await _dbContext.Sentences.ToListAsync();
+            return Ok($"Test Affirmation Words: {sentences.Count}");
+        }
     }
+
 }
