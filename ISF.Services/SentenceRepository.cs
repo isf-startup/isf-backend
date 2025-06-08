@@ -15,20 +15,24 @@ namespace ISF.Services
         {
             _context = context;
         }
-        public Task<List<Sentence>> GetSentencesAsync(string languageCode)
+        public async Task<List<Sentence>> GetSentencesAsync(string languageCode)
         {
             if (string.IsNullOrEmpty(languageCode))
             {
                 throw new ArgumentException("Language code cannot be null or empty.", nameof(languageCode));
             }
-            if (languageCode == "en")
+             if (languageCode == "en")
             {
-                return _context.Sentences.Where(s => s.WordEN == "en").ToListAsync();
-            }
+                    var result = await _context.Sentences.Where(s => s.WordEN != "en").ToListAsync();
+                    return result;
+            }             
+
             else if (languageCode == "tr")
             {
-                return _context.Sentences.Where(s => s.WordTR == "tr").ToListAsync();
+            var result = await _context.Sentences.Where(s => s.WordTR != "tr").ToListAsync();
+            return result;
             }
+
             else
             {
                 throw new ArgumentException("Invalid language code.", nameof(languageCode));
