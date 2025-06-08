@@ -21,6 +21,7 @@ namespace ISF.Services
             {
                 throw new ArgumentException("Language code cannot be null or empty.", nameof(languageCode));
             }
+            languageCode = languageCode.ToLower();
              if (languageCode == "en")
             {
                     var result = await _context.Sentences.Where(s => !string.IsNullOrEmpty(s.WordEN)).ToListAsync();
